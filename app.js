@@ -29,13 +29,13 @@ const initializeDbAndServer = async () => {
 initializeDbAndServer();
 
 app.get("/", async (request, response) => {
-  const getMoviesQuery = `
+  const getTransactions = `
     SELECT
       *
     FROM
       mytable;`;
-  const moviesArray = await database.all(getMoviesQuery);
-  response.send(moviesArray);
+  const transactionArray = await database.all(getTransactions);
+  response.send(transactionArray);
 });
 
 module.exports = app;
